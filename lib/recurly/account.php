@@ -35,6 +35,7 @@
  * @property DateTime $closed_at For closed accounts, the date and time it was closed.
  * @property Recurly_AccountAcquisition $account_acquisition The nested account acquisition information: cost_in_cents, currency, channel, subchannel, campaign.
  * @property string $transaction_type Indicates type of resulting transaction. accepted_values: "moto".
+ * @property string $bill_to Determines whether all charges are billed using parent’s billing information or the account itself
  */
 class Recurly_Account extends Recurly_Resource
 {
@@ -110,7 +111,7 @@ class Recurly_Account extends Recurly_Resource
       'email', 'company_name', 'accept_language', 'billing_info', 'address',
       'tax_exempt', 'entity_use_code', 'cc_emails', 'shipping_addresses',
       'preferred_locale', 'custom_fields', 'account_acquisition', 'exemption_certificate',
-      'parent_account_code', 'transaction_type'
+      'parent_account_code', 'transaction_type', 'bill_to'
     );
   }
   protected function getRequiredAttributes() {
